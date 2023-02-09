@@ -1,0 +1,272 @@
+/* Globle CSS STARTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,500&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #388e3c;
+  --secondary-color: #d50000;
+  --accent-color: #64b5f6;
+}
+html {
+  font-size: 62.5%;
+}
+/* Globle CSS ENDS */
+
+/* Main CSS Start */
+body {
+  background: #64b5f6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 10em 0em;
+  font-family: "Roboto", sans-serif;
+}
+.heading {
+  text-transform: uppercase;
+  color: white;
+  font-size: 50px;
+  letter-spacing: 1px;
+}
+.container {
+  padding: 1em;
+  width: 85%;
+}
+/* Main CSS End */
+
+/* Add Task Container CSS Start */
+
+#new-tast {
+  background: #fff;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.3);
+}
+#userInput {
+  width: 100%;
+  font-size: 1.3rem;
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: 2px solid gainsboro;
+}
+#userInput:focus {
+  outline: none;
+  border: 2px solid var(--accent-color);
+}
+#Add-Task,
+#save {
+  width: 100%;
+  margin-top: 0.5em;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8em;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add Task Container CSS End */
+
+/* Task List CSS Start */
+#taskList {
+  background: #fff;
+  margin-top: 2em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.3);
+}
+#searchTask {
+  display: flex;
+  flex-direction: column;
+}
+#deleteAll {
+  width: 100%;
+  background: var(--secondary-color);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8em;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 0.6em;
+}
+#searchBar {
+  width: 100%;
+  font-size: 1.3rem;
+  padding: 0.7rem;
+  border-radius: 5px;
+  color: #111111;
+  border: 2px solid gainsboro;
+}
+#searchBar:focus {
+  outline: none;
+  border: 2px solid var(--accent-color);
+}
+/* Task List CSS Ends */
+
+/* ListContainer CSS Start */
+#listContainer {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 1.5em;
+}
+#noTask {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-left: 0px;
+}
+#task {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 1em 0.5em;
+  margin-bottom: 1em;
+  border-left: 2px solid #388e3c;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.3);
+}
+#taskName {
+  font-size: 1.7rem;
+  text-transform: capitalize;
+}
+#actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+  padding: 0.5em;
+}
+#edit,
+#delete {
+  width: 48%;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8em;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 0.6em;
+}
+#delete {
+  background: var(--secondary-color);
+}
+i {
+  margin-right: 10px;
+}
+/* ListContainer CSS Ends */
+
+/* Warning Msg CSS Start */
+#snackBar {
+  min-width: 25em;
+  padding: 1.6em;
+  background: white;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: -12em;
+  position: fixed;
+  left: 50%;
+  z-index: 1;
+  bottom: 5em;
+  visibility: hidden;
+}
+#snackBar.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 5em;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 5em;
+    opacity: 01;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+/* Warning Msg CSS End */
+
+/* Responsive CSS Start  */
+@media only screen and (min-width: 500px) {
+  .container {
+    /* background-color: red; */
+    max-width: 100%;
+    padding: 1em;
+  }
+  #new-tast {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+  }
+  #userInput {
+    width: 60%;
+    font-size: 1.6rem;
+  }
+  #Add-Task,
+  #save {
+    width: 38%;
+    font-size: 1.6rem;
+    margin-top: 0;
+  }
+  #taskList {
+    padding: 2em;
+  }
+  #searchTask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #deleteAll {
+    width: 38%;
+    padding: 0.6em;
+    margin-bottom: 0;
+  }
+  #searchBar {
+    width: 60%;
+    padding: 0.6em;
+    /* margin-top: 0; */
+  }
+  #task {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #taskName {
+    width: 60%;
+    font-size: 1.6rem;
+  }
+  #actions {
+    width: 40%;
+  }
+  #edit,
+  #delete {
+    padding: 1em 0.7em;
+    font-size: 1.2rem;
+  }
+}
+/* Responsive CSS End  */
